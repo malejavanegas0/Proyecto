@@ -15,6 +15,10 @@ from sklearn.preprocessing import StandardScaler
 from imblearn.over_sampling import SMOTE
 from numpy import mean, std
 from sklearn.datasets import make_classification
+from sklearn.metrics import classification_report, confusion_matrix
+from sklearn.pipeline import Pipeline
+from sklearn.model_selection import GridSearchCV, RepeatedStratifiedKFold
+from sklearn.ensemble import RandomForestClassifier
 import traceback
 
 try:
