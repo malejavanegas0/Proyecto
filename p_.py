@@ -388,7 +388,7 @@ Se realiza validación cruzada para calcular el K óptimo para la Selección de 
         ('rf', RandomForestClassifier(random_state=42))
     ])
     param_grid_rf = {
-        'rf__n_estimators': [100, 200],
+        'rf__n_estimators': [100],
         'rf__max_depth': [10, 20],
         'rf__min_samples_split': [2, 5],
         'rf__min_samples_leaf': [1, 2]
