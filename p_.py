@@ -15,6 +15,7 @@ from sklearn.preprocessing import StandardScaler
 from imblearn.over_sampling import SMOTE
 from numpy import mean, std
 from sklearn.datasets import make_classification
+from sklearn.ensemble import RandomForestClassifier
 import traceback
 
 try:
