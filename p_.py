@@ -396,27 +396,23 @@ Se realiza validación cruzada para calcular el K óptimo para la Selección de 
     grid_search_rf.fit(X_resampled, y_resampled)
     best_rf_model = grid_search_rf.best_estimator_
     y_pred_best_rf_original_test = best_rf_model.predict(X_test)
-    # --- STREAMLIT OUTPUT ---
-st.title("Random Forest Model Evaluation")
-# Mostrar mejores hiperparámetros
-st.subheader("Best Hyperparameters")
-st.write(grid_search_rf.best_params_)
-
-# Mostrar reporte de clasificación
-st.subheader("Classification Report")
-report = classification_report(y_test, y_pred_best_rf_original_test, output_dict=True)
-st.dataframe(report)  # se muestra como tabla
-
-# Mostrar matriz de confusión
-st.subheader("Confusion Matrix")
-conf_matrix_original_test = confusion_matrix(y_test, y_pred_best_rf_original_test)
-
-fig, ax = plt.subplots(figsize=(8, 6))
-sns.heatmap(conf_matrix_original_test, annot=True, fmt='d', cmap='Blues', ax=ax)
-ax.set_title('Confusion Matrix Heatmap')
-ax.set_xlabel('Predicted Label')
-ax.set_ylabel('Actual Label')
-st.pyplot(fig)
+    # --- STREAMLIT OUTPUT --
+    st.title("Random Forest Model Evaluation")
+    st.subheader("Best Hyperparameters")
+    st.write(grid_search_rf.best_params_)
+    # Mostrar reporte de clasificación
+    st.subheader("Classification Report")
+    report = classification_report(y_test, y_pred_best_rf_original_test, output_dict=True)
+    st.dataframe(report)  # se muestra como tabla
+    # Mostrar matriz de confusión
+    st.subheader("Confusion Matrix")
+    conf_matrix_original_test = confusion_matrix(y_test, y_pred_best_rf_original_test)
+    fig, ax = plt.subplots(figsize=(8, 6))
+    sns.heatmap(conf_matrix_original_test, annot=True, fmt='d', cmap='Blues', ax=ax)
+    ax.set_title('Confusion Matrix Heatmap')
+    ax.set_xlabel('Predicted Label')
+    ax.set_ylabel('Actual Label')
+    st.pyplot(fig)
 
 except Exception as e:
     st.error("Ocurrió un error al ejecutar la app.")
