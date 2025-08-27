@@ -384,7 +384,7 @@ Se realiza validación cruzada para calcular el K óptimo para la Selección de 
     """)
     st.subheader("Modelos")
 	@st.cache_resource
-def run_grid_search_rf(X, y, param_grid, cv):
+	def run_grid_search_rf(X, y, param_grid, cv):
 	pipeline_rf = Pipeline([
 		('rf', RandomForestClassifier(random_state=42))
 	])
