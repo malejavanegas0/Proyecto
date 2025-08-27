@@ -390,7 +390,7 @@ Se realiza validación cruzada para calcular el K óptimo para la Selección de 
         'rf__min_samples_split': [2, 5],
         'rf__min_samples_leaf': [1, 2]
     }
-    cv_rf = RepeatedStratifiedKFold(n_splits=3, n_repeats=3, random_state=42)
+    cv_rf = RepeatedStratifiedKFold(n_splits=3, n_repeats=2, random_state=42)
     grid_search_rf = GridSearchCV(
         pipeline_rf, param_grid_rf, cv=cv_rf, scoring='accuracy', n_jobs=-1
     )
