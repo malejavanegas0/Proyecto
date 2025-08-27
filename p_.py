@@ -384,14 +384,15 @@ Se realiza validación cruzada para calcular el K óptimo para la Selección de 
     """)
     st.subheader("Modelos")
 # --- ENTRENAMIENTO Y GRIDSEARCH (igual que lo tienes) ---
+    @st.cache_resource
     pipeline_rf = Pipeline([
         ('rf', RandomForestClassifier(random_state=42))
     ])
     param_grid_rf = {
         'rf__n_estimators': [100],
-        'rf__max_depth': [10, 20],
-        'rf__min_samples_split': [2, 5],
-        'rf__min_samples_leaf': [1, 2]
+        'rf__max_depth': [10],
+        'rf__min_samples_split': [2],
+        'rf__min_samples_leaf': [1]
     }
     cv_rf = RepeatedStratifiedKFold(n_splits=3, n_repeats=2, random_state=42)
     grid_search_rf = GridSearchCV(
