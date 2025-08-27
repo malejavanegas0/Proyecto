@@ -383,42 +383,28 @@ Se realiza validación cruzada para calcular el K óptimo para la Selección de 
     En el método de análisis de componente principales (PCA), se observa que con 15 componentes se logra explicar **el 72% de exactitud**. 
     """)
     st.subheader("Modelos")
-# --- ENTRENAMIENTO Y GRIDSEARCH (igual que lo tienes) ---
-    @st.cache_resource
-    pipeline_rf = Pipeline([
-        ('rf', RandomForestClassifier(random_state=42))
-    ])
-    param_grid_rf = {
-        'rf__n_estimators': [100],
-        'rf__max_depth': [10],
-        'rf__min_samples_split': [2],
-        'rf__min_samples_leaf': [1]
-    }
-    cv_rf = RepeatedStratifiedKFold(n_splits=3, n_repeats=2, random_state=42)
-    grid_search_rf = GridSearchCV(
-        pipeline_rf, param_grid_rf, cv=cv_rf, scoring='accuracy', n_jobs=-1
-    )
-    grid_search_rf.fit(X_resampled, y_resampled)
-    best_rf_model = grid_search_rf.best_estimator_
-    y_pred_best_rf_original_test = best_rf_model.predict(X_test)
-    # --- STREAMLIT OUTPUT --
-    st.title("Random Forest Model Evaluation")
-    st.subheader("Best Hyperparameters")
-    st.write(grid_search_rf.best_params_)
-    # Mostrar reporte de clasificación
-    st.subheader("Classification Report")
-    report = classification_report(y_test, y_pred_best_rf_original_test, output_dict=True)
-    st.dataframe(report)  # se muestra como tabla
-    # Mostrar matriz de confusión
-    st.subheader("Confusion Matrix")
-    conf_matrix_original_test = confusion_matrix(y_test, y_pred_best_rf_original_test)
-    fig, ax = plt.subplots(figsize=(8, 6))
-    sns.heatmap(conf_matrix_original_test, annot=True, fmt='d', cmap='Blues', ax=ax)
-    ax.set_title('Confusion Matrix Heatmap')
-    ax.set_xlabel('Predicted Label')
-    ax.set_ylabel('Actual Label')
-    st.pyplot(fig)
-
+	@st.cache_resource
+def run_grid_search_rf(X, y, param_grid, cv):
+	pipeline_rf = Pipeline([
+		('rf', RandomForestClassifier(random_state=42))
+	])
+	grid_search_rf = GridSearchCV(pipeline_rf, param_grid, cv=cv, scoring='accuracy', n_jobs=-1)
+	grid_search_rf.fit(X, y)
+	return grid_search_rf
+	param_grid_rf = {
+		'rf__n_estimators': [100],
+		'rf__max_depth': [10],
+		'rf__min_samples_split': [2],
+		'rf__min_samples_leaf': [1]
+	}
+	cv_rf = RepeatedStratifiedKFold(n_splits=2, n_repeats=1, random_state=42)
+	n_sample = st.slider("Número de filas a usar para entrenamiento", min_value=1000, max_value=len(X_resampled), value=3000, step=500)
+	X_sample, y_sample = X_resampled[:n_sample], y_resampled[:n_sample]
+	with st.spinner("Entrenando Random Forest..."):
+		grid_search_rf = run_grid_search_rf(X_sample, y_sample, param_grid_rf, cv_rf)
+		st.success("Entrenamiento terminado.")
+		st.write('Mejor exactitud promedio: %.3f' % grid_search_rf.best_score_)
+		st.write('Mejores parámetros:', grid_search_rf.best_params_)
 except Exception as e:
     st.error("Ocurrió un error al ejecutar la app.")
     st.text(traceback.format_exc())
