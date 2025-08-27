@@ -379,7 +379,7 @@ Se realiza validación cruzada para calcular el K óptimo para la Selección de 
     st.markdown("""
     En el método de análisis de componente principales (PCA), se observa que con 15 componentes se logra explicar **el 72% de exactitud**. 
     """)
-    
+    st.subheader("Modelos")
 # --- ENTRENAMIENTO Y GRIDSEARCH (igual que lo tienes) ---
     pipeline_rf = Pipeline([
         ('rf', RandomForestClassifier(random_state=42))
@@ -412,6 +412,7 @@ Se realiza validación cruzada para calcular el K óptimo para la Selección de 
     ax.set_xlabel('Predicted Label')
     ax.set_ylabel('Actual Label')
     st.pyplot(fig)
+    
 except Exception as e:
     st.error("Ocurrió un error al ejecutar la app.")
     st.text(traceback.format_exc())
