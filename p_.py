@@ -437,8 +437,8 @@ param_grid_lr = {
 cv_lr = RepeatedStratifiedKFold(n_splits=3, n_repeats=2, random_state=42)
 
 """)
-    loaded_model = joblib.load('/content/drive/MyDrive/Machine_Learning/Proyecto_clase/trained_models/best_random_forest_model.joblib')
-    prediction = loaded_model.predict(new_data)
+    model_path = os.path.join(os.path.dirname(__file__), 'best_random_forest_model.joblib')
+    loaded_model = joblib.load(model_path)
 
 except Exception as e:
     st.error("Ocurrió un error al ejecutar la app.")
