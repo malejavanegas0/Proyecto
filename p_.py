@@ -456,7 +456,8 @@ cv_lr = RepeatedStratifiedKFold(n_splits=3, n_repeats=2, random_state=42)
 
 """)
     st.image("Logistic.png", caption=" Resultado Modelo Logistics Regression", width=600)
-    
+
+    st.subheader("Resultado de Modelos")
     st.image("Summary.png", caption=" Resultado Modelos", use_column_width=True)
     
 except Exception as e:
