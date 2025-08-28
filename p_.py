@@ -17,6 +17,7 @@ from numpy import mean, std
 from sklearn.datasets import make_classification
 from sklearn.ensemble import RandomForestClassifier
 import traceback
+import joblib
 
 try:
     st.set_page_config(page_title="Análisis de Fumadores 🚭", layout="wide")
@@ -436,7 +437,11 @@ param_grid_lr = {
 cv_lr = RepeatedStratifiedKFold(n_splits=3, n_repeats=2, random_state=42)
 
 """)
+# Load the model
+loaded_model = joblib.load('/content/drive/MyDrive/Machine_Learning/Proyecto_clase/trained_models/best_random_forest_model.joblib')
 
+# Now you can use loaded_model to make predictions
+# prediction = loaded_model.predict(new_data)
 
 except Exception as e:
     st.error("Ocurrió un error al ejecutar la app.")
