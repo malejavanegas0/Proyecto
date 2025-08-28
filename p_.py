@@ -441,7 +441,7 @@ param_grid_svm = {
 cv_svm = RepeatedStratifiedKFold(n_splits=3, n_repeats=2, random_state=42)
 
 """)
-    t.image("SVM.png", caption=" Resultado Modelo Support Vector Machine Linear", width=600)
+    st.image("SVM.png", caption=" Resultado Modelo Support Vector Machine Linear", width=600)
     
     st.markdown("""
 ### 5. Logistics Regression
@@ -455,7 +455,7 @@ param_grid_lr = {
 cv_lr = RepeatedStratifiedKFold(n_splits=3, n_repeats=2, random_state=42)
 
 """)
-    t.image("Logistic.png", caption=" Resultado Modelo Logistics Regression", width=600)
+    st.image("Logistic.png", caption=" Resultado Modelo Logistics Regression", width=600)
     
 except Exception as e:
     st.error("Ocurrió un error al ejecutar la app.")
