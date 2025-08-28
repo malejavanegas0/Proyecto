@@ -396,7 +396,8 @@ param_grid_rf = {
 cv_et = RepeatedStratifiedKFold(n_splits=3, n_repeats=2, random_state=42)
 
 """)
-    st.image("Logistic.png", caption="Descripción de la imagen", width=600)
+    st.image("Random.png", caption=" Resultado Modelo Random Forest", width=600)
+    
     st.markdown("""
 ### 2. Extra-trees
 - **Hiperparámetros:**
@@ -410,6 +411,7 @@ param_grid_et = {
 - **Validación cruzada:**
 cv_et = RepeatedStratifiedKFold(n_splits=3, n_repeats=2, random_state=42)
 
+st.image("Extra-trees.png", caption=" Resultado Modelo Extra - Trees", width=600)
 """)
     st.markdown("""
 ### 3. HistGradientBoosting
@@ -422,10 +424,9 @@ param_grid_hgb = {
 
 - **Validación cruzada:**
 cv_hgb = RepeatedStratifiedKFold(n_splits=3, n_repeats=2, random_state=42)
-
+st.image("HGB.png", caption=" Resultado Modelo HistGradientBoosting", width=600)
 """)
     st.markdown("""
-### 3. HistGradientBoo
 ### 4. SVM Linear
 - **Hiperparámetros:**
 param_grid_svm = {
@@ -434,6 +435,7 @@ param_grid_svm = {
 
 - **Validación cruzada:**
 cv_svm = RepeatedStratifiedKFold(n_splits=3, n_repeats=2, random_state=42)
+t.image("SVM.png", caption=" Resultado Modelo Support Vector Machine Linear", width=600)
 """)
     st.markdown("""
 ### 5. Logistics Regression
@@ -445,7 +447,7 @@ param_grid_lr = {
 
 - **Validación cruzada:**
 cv_lr = RepeatedStratifiedKFold(n_splits=3, n_repeats=2, random_state=42)
-
+t.image("Logistic.png", caption=" Resultado Modelo Logistics Regression", width=600)
 """)
     
 except Exception as e:
