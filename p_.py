@@ -382,32 +382,59 @@ Se realiza validación cruzada para calcular el K óptimo para la Selección de 
     st.subheader("Modelos")
     st.markdown("""
 ### 1. Random Forest
-**Hiperparámetros:**
+- **Hiperparámetros:**
 param_grid_rf = {
     'rf__n_estimators': [100, 200],
     'rf__max_depth': [10, 20],
     'rf__min_samples_split': [2, 5], 
     'rf__min_samples_leaf': [1, 2] 
 }
-**Validación cruzada:**
+
+- **Validación cruzada:**
 cv_et = RepeatedStratifiedKFold(n_splits=3, n_repeats=2, random_state=42)
 
 ### 2. Extra-trees
-**Hiperparámetros:**
+- **Hiperparámetros:**
 param_grid_et = {
     'et__n_estimators': [100, 200], 
     'et__max_depth': [10, 20], 
     'et__min_samples_split': [2, 5], 
     'et__min_samples_leaf': [1, 2]
 }
-**Validación cruzada:**
+
+- **Validación cruzada:**
 cv_et = RepeatedStratifiedKFold(n_splits=3, n_repeats=2, random_state=42)
 
 ### 3. HistGradientBoosting
+- **Hiperparámetros:**
+param_grid_hgb = {
+    'hgb__max_iter': [100, 200], 
+    'hgb__max_depth': [None, 10],
+    'hgb__learning_rate': [0.1, 0.01]
+}
+
+- **Validación cruzada:**
+cv_hgb = RepeatedStratifiedKFold(n_splits=3, n_repeats=2, random_state=42)
 
 ### 4. SVM Linear
+- **Hiperparámetros:**
+param_grid_svm = {
+    'svm__C': [0.1, 1, 10] 
+}
+
+- **Validación cruzada:**
+cv_svm = RepeatedStratifiedKFold(n_splits=3, n_repeats=2, random_state=42)
 
 ### 5. Logistics Regression
+- **Hiperparámetros:**
+param_grid_lr = {
+    'lr__C': [0.01, 0.1, 1, 10, 100],
+    'lr__penalty': ['l1', 'l2']
+}
+
+- **Validación cruzada:**
+cv_lr = RepeatedStratifiedKFold(n_splits=3, n_repeats=2, random_state=42)
+
 """)
 
 
