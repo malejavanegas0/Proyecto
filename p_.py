@@ -396,7 +396,7 @@ param_grid_rf = {
 cv_et = RepeatedStratifiedKFold(n_splits=3, n_repeats=2, random_state=42)
 
 """)
-    st.image("Logistic.png", caption="Descripción de la imagen", width=300)
+    st.image("Logistic.png", caption="Descripción de la imagen", width=600)
     st.markdown("""
 ### 2. Extra-trees
 - **Hiperparámetros:**
