@@ -457,7 +457,7 @@ cv_lr = RepeatedStratifiedKFold(n_splits=3, n_repeats=2, random_state=42)
 """)
     st.image("Logistic.png", caption=" Resultado Modelo Logistics Regression", width=600)
     
-    st.image("Summary.png", caption=" Resultado Modelos", width=700)
+    st.image("Summary.png", caption=" Resultado Modelos", use_column_width=True)
     
 except Exception as e:
     st.error("Ocurrió un error al ejecutar la app.")
