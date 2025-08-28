@@ -438,7 +438,8 @@ param_grid_lr = {
 cv_lr = RepeatedStratifiedKFold(n_splits=3, n_repeats=2, random_state=42)
 
 """)
-    model_path = os.path.join(os.path.dirname(__file__), 'best_random_forest_model.joblib')
+    script_dir = os.path.dirname(__file__)
+    model_path = os.path.join(script_dir, 'best_random_forest_model.joblib')
     loaded_model = joblib.load(model_path)
 
 except Exception as e:
