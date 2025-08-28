@@ -395,6 +395,8 @@ param_grid_rf = {
 - **Validación cruzada:**
 cv_et = RepeatedStratifiedKFold(n_splits=3, n_repeats=2, random_state=42)
 
+st.image("Logistic.png", caption="Descripción de la imagen", use_column_width=True)
+
 ### 2. Extra-trees
 - **Hiperparámetros:**
 param_grid_et = {
