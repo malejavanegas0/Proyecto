@@ -380,6 +380,36 @@ Se realiza validación cruzada para calcular el K óptimo para la Selección de 
     En el método de análisis de componente principales (PCA), se observa que con 15 componentes se logra explicar **el 72% de exactitud**. 
     """)
     st.subheader("Modelos")
+    st.markdown("""
+### 1. Random Forest
+**Hiperparámetros:**
+param_grid_rf = {
+    'rf__n_estimators': [100, 200],
+    'rf__max_depth': [10, 20],
+    'rf__min_samples_split': [2, 5], 
+    'rf__min_samples_leaf': [1, 2] 
+}
+**Validación cruzada:**
+cv_et = RepeatedStratifiedKFold(n_splits=3, n_repeats=2, random_state=42)
+
+### 2. Extra-trees
+**Hiperparámetros:**
+param_grid_et = {
+    'et__n_estimators': [100, 200], 
+    'et__max_depth': [10, 20], 
+    'et__min_samples_split': [2, 5], 
+    'et__min_samples_leaf': [1, 2]
+}
+**Validación cruzada:**
+cv_et = RepeatedStratifiedKFold(n_splits=3, n_repeats=2, random_state=42)
+
+### 3. HistGradientBoosting
+
+### 4. SVM Linear
+
+### 5. Logistics Regression
+""")
+
 
 except Exception as e:
     st.error("Ocurrió un error al ejecutar la app.")
