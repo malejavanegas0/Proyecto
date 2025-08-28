@@ -18,6 +18,7 @@ from sklearn.datasets import make_classification
 from sklearn.ensemble import RandomForestClassifier
 import traceback
 import joblib
+import os
 
 try:
     st.set_page_config(page_title="Análisis de Fumadores 🚭", layout="wide")
