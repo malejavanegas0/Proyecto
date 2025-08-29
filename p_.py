@@ -153,6 +153,8 @@ fumadores y no fumadores. En cuanto al género femenino se evidencia que la gran
 
 """)
 
+    st.subheader("Tratamiento de data")
+    
     st.markdown("""
 **Se eliminan los campos `ID` y `oral`**, dado que:
 - El `ID` no representa una variable de estudio.
