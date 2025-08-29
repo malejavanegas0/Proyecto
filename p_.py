@@ -120,6 +120,8 @@ Esto sugiere que, en esta muestra, el tabaquismo no muestra una influencia clara
 Los fumadores tienden a tener niveles de hemoglobina más altos que los no fumadores.
 """)
 
+    st.subheader("Información Variables categóricas")
+
     # Gráficos de conteo
     fig, axes = plt.subplots(1,3, figsize=(15, 5))
     sns.countplot(x='dental caries', hue='smoking', data=df, ax=axes[0])
@@ -146,6 +148,8 @@ Los fumadores tienden a presentar mayor frecuencia relativa de sarro en comparac
 La diferencia es más marcada en el grupo con sarro, lo que podría indicar una relación entre el tabaquismo y la acumulación de placa.
 
 ### 3. Género y Tabaquismo
+En el conjunto de datos en la población fumadora es predominantemente masculina. De manera que se observa un comportamiento realtivamente semejante entre
+fumadores y no fumadores. En cuanto al género femenino se evidencia que la gran mayoría de esta población es no fumadora. 
 
 """)
 
