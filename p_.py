@@ -117,7 +117,7 @@ Las distribuciones son similares y ambos grupos tienen valores extremos elevados
 Esto sugiere que, en esta muestra, el tabaquismo no muestra una influencia clara sobre la presión sistólica.
 
 ## 4. Hemoglobina vs Tabaquismo
-
+Los fumadores tienden a tener niveles de hemoglobina más altos que los no fumadores.
 """)
 
     # Gráficos de conteo
@@ -144,6 +144,9 @@ Esto sugiere que el tabaquismo podría estar asociado con una mayor incidencia d
 ### 2. Sarro Dental y Tabaquismo
 Los fumadores tienden a presentar mayor frecuencia relativa de sarro en comparación con los no fumadores.  
 La diferencia es más marcada en el grupo con sarro, lo que podría indicar una relación entre el tabaquismo y la acumulación de placa.
+
+### 3. Género y Tabaquismo
+
 """)
 
     st.markdown("""
