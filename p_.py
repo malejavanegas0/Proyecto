@@ -476,6 +476,12 @@ cv_lr = RepeatedStratifiedKFold(n_splits=3, n_repeats=2, random_state=42)
     st.subheader("Resultado de Modelos")
     st.image("Summary.png", caption=" Resultado Modelos", use_column_width=True)
     
+    st.subheader("Conclusiones")
+    st.markdown("""
+    E
+     
+    """)
+
 except Exception as e:
     st.error("Ocurrió un error al ejecutar la app.")
     st.text(traceback.format_exc())
