@@ -115,10 +115,13 @@ Esto puede indicar una relación entre el consumo de tabaco y la función renal 
 No se observan diferencias significativas entre fumadores y no fumadores.  
 Las distribuciones son similares y ambos grupos tienen valores extremos elevados.  
 Esto sugiere que, en esta muestra, el tabaquismo no muestra una influencia clara sobre la presión sistólica.
+
+## 4. Hemoglobina vs Tabaquismo
+
 """)
 
     # Gráficos de conteo
-    fig, axes = plt.subplots(1, 2, figsize=(12, 5))
+    fig, axes = plt.subplots(1,3, figsize=(12, 5))
     sns.countplot(x='dental caries', hue='smoking', data=df, ax=axes[0])
     axes[0].set_title('Distribución de Fumadores por Caries Dentales')
     axes[0].set_xlabel('Caries Dentales')
@@ -127,6 +130,10 @@ Esto sugiere que, en esta muestra, el tabaquismo no muestra una influencia clara
     axes[1].set_title('Distribución de Fumadores por Sarro')
     axes[1].set_xlabel('Sarro')
     axes[1].set_ylabel('Conteo')
+    sns.countplot(x='gender', hue='smoking', data=df, ax=axes[3])
+    axes[2].set_title('Distribución de Fumadores por Genero')
+    axes[2].set_xlabel('Genero')
+    axes[2].set_ylabel('Conteo')
     st.pyplot(fig)
 
     st.markdown("""
