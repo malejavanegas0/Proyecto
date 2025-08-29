@@ -121,7 +121,7 @@ Esto sugiere que, en esta muestra, el tabaquismo no muestra una influencia clara
 """)
 
     # Gráficos de conteo
-    fig, axes = plt.subplots(1,3, figsize=(12, 5))
+    fig, axes = plt.subplots(1,3, figsize=(15, 5))
     sns.countplot(x='dental caries', hue='smoking', data=df, ax=axes[0])
     axes[0].set_title('Distribución de Fumadores por Caries Dentales')
     axes[0].set_xlabel('Caries Dentales')
@@ -130,7 +130,7 @@ Esto sugiere que, en esta muestra, el tabaquismo no muestra una influencia clara
     axes[1].set_title('Distribución de Fumadores por Sarro')
     axes[1].set_xlabel('Sarro')
     axes[1].set_ylabel('Conteo')
-    sns.countplot(x='gender', hue='smoking', data=df, ax=axes[3])
+    sns.countplot(x='gender', hue='smoking', data=df, ax=axes[2])
     axes[2].set_title('Distribución de Fumadores por Genero')
     axes[2].set_xlabel('Genero')
     axes[2].set_ylabel('Conteo')
