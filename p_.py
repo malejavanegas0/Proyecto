@@ -25,20 +25,19 @@ try:
     st.title("Modelo de clasificación de estado de consumo de Tabaco")
     st.subheader("Elaborado por: Daniela Forero Cardenas , David Mendez Medellin y María Alejandra Vanegas")
 
-    st.markdown("## 📑 Índice")
-    cols = st.columns(6)  # 6 botones horizontales
-    with cols[0]:
-        st.markdown("[Composición Data Set](#composición-data-set)")
-    with cols[1]:
-        st.markdown("[Boxplots vs Smoking](#boxplots-por-variable-numérica-vs-smoking)")
-    with cols[2]:
-        st.markdown("[Variables Categóricas](#información-variables-categóricas)")
-    with cols[3]:
-        st.markdown("[Tratamiento de data](#tratamiento-de-data)")
-    with cols[4]:
-        st.markdown("[Modelos](#modelos)")
-    with cols[5]:
-        st.markdown("[Conclusiones](#conclusiones)")
+    st.markdown(
+    """
+    <div style="display: flex; justify-content: space-around; background-color:#f5f5f5; padding:10px; border-radius:8px;">
+        <a href="#composición-data-set" style="text-decoration:none; color:black; font-weight:bold;">Composición Data Set</a>
+        <a href="#boxplots-por-variable-numérica-vs-smoking" style="text-decoration:none; color:black; font-weight:bold;">Boxplots vs Smoking</a>
+        <a href="#información-variables-categóricas" style="text-decoration:none; color:black; font-weight:bold;">Variables Categóricas</a>
+        <a href="#tratamiento-de-data" style="text-decoration:none; color:black; font-weight:bold;">Tratamiento de data</a>
+        <a href="#modelos" style="text-decoration:none; color:black; font-weight:bold;">Modelos</a>
+        <a href="#conclusiones" style="text-decoration:none; color:black; font-weight:bold;">Conclusiones</a>
+    </div>
+    """,
+    unsafe_allow_html=True
+)
 
     st.subheader("Composición Data Set:")
     st.write("**Total registros:** 55,692")
