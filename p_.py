@@ -28,23 +28,24 @@ try:
     <style>
     /* Fondo general */
     body, .stApp {
-        background-color: #E6F0FA; /* Azul clarito */
-        color: #002147; /* Azul oscuro para el texto */
+        background-color: #E6F0FA !important; /* Azul clarito */
+        color: #002147 !important; /* Azul oscuro */
     }
 
-    /* Personalizar títulos */
-    h1, h2, h3, h4, h5, h6 {
-        color: #002147; /* Azul oscuro */
+    /* Títulos */
+    h1, h2, h3, h4, h5, h6, p, span, div {
+        color: #002147 !important; /* Azul oscuro */
     }
 
-    /* Cambiar color de los links del índice */
+    /* Links del índice */
     a {
         color: #003366 !important; 
-        font-weight: bold;
+        font-weight: bold !important;
+        text-decoration: none !important;
     }
     a:hover {
         color: #001F54 !important; 
-        text-decoration: underline;
+        text-decoration: underline !important;
     }
     </style>
     """,
