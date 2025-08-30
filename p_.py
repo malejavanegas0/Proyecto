@@ -24,6 +24,20 @@ try:
     st.set_page_config(page_title="Análisis de Fumadores 🚭", layout="wide")
     st.title("Modelo de clasificación de estado de consumo de Tabaco")
     st.subheader("Elaborado por: Daniela Forero Cardenas , David Mendez Medellin y María Alejandra Vanegas")
+
+    st.markdown(
+    """
+    ## 📑 Índice
+    - [Composición Data Set](#composición-data-set)
+    - [Boxplots vs Smoking](#boxplots-por-variable-numérica-vs-smoking)
+    - [Variables Categóricas](#información-variables-categóricas)
+    - [Tratamiento de data](#tratamiento-de-data)
+    - [Exploración de PCA con características seleccionadas]
+    - [Modelos](#modelos)
+    - [Conclusiones](#conclusiones)
+    """,
+    unsafe_allow_html=True
+)
     st.subheader("Composición Data Set:")
     st.write("**Total registros:** 55,692")
     st.write("**Total variables:** 27")
