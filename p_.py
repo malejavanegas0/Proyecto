@@ -290,7 +290,7 @@ Se realiza validación cruzada para calcular el K óptimo para la Selección de 
     st.write(X_selected_df.head())
     st.markdown("""
     El mejor modelo para la selección de variables es: 
-    ANOVA, ya que presenta un valor mayor de exactitud. 
+    características de información mutua, ya que presenta un valor mayor de exactitud. 
 """)
     # === ANÁLISIS PCA EXPLORATORIO ===
     st.subheader("Exploración de PCA con características seleccionadas")
