@@ -486,7 +486,7 @@ cv_lr = RepeatedStratifiedKFold(n_splits=3, n_repeats=2, random_state=42)
     como Random Forest resulta más adecuado en contextos donde la prioridad es no omitir casos positivos, aun si esto implica un posible aumento en 
     los falsos positivos.
 
-    **MODELOS DE ENSAMBLE (RANDOM FOREST, EXTRA TREES, HISTGRADIENTBOOSTING)**
+**MODELOS DE ENSAMBLE (RANDOM FOREST, EXTRA TREES, HISTGRADIENTBOOSTING)**
 - Los tres alcanzaron un desempeño superior al 92% de accuracy, lo que indica que combinando múltiples clasificadores se logra capturar mejor la complejidad de los datos.
 - Presentan un balance muy sólido entre precisión, recall y F1-score, mostrando que no solo aciertan mucho, sino que también logran identificar correctamente ambas clases (positiva y negativa).
 - HistGradientBoosting también es competitivo, aunque ligeramente detrás en errores totales.
