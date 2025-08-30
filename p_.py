@@ -29,7 +29,7 @@ try:
     /* Fondo general */
     body, .stApp {
         background-color: #E6F0FA !important; /* Azul clarito */
-        color: #002147 !important; /* Azul oscuro */
+        color: #0033A0 !important; /* Azul oscuro */
     }
 
     /* Títulos */
