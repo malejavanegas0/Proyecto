@@ -478,7 +478,13 @@ cv_lr = RepeatedStratifiedKFold(n_splits=3, n_repeats=2, random_state=42)
     
     st.subheader("Conclusiones")
     st.markdown("""
-    E
+
+    El análisis comparativo de modelos de clasificación permitió evidenciar que el **Random Forest fue el modelo con mejor desempeño en términos de recall,**
+    alcanzando un valor del 99%. Este resultado es especialmente relevante dado que el objetivo principal consistía en maximizar la identificación de los 
+    casos positivos y, por ende, reducir los falsos negativos. En contraste, los modelos base evaluados, como SVM y regresión logística, solo alcanzaron 
+    un recall cercano al 70%, lo que refleja una menor capacidad de detección de positivos. De esta manera, se concluye que el uso de un modelo de ensamble 
+    como Random Forest resulta más adecuado en contextos donde la prioridad es no omitir casos positivos, aun si esto implica un posible aumento en 
+    los falsos positivos.
      
     """)
 
