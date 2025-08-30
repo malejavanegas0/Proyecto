@@ -487,21 +487,23 @@ cv_lr = RepeatedStratifiedKFold(n_splits=3, n_repeats=2, random_state=42)
     los falsos positivos.
 
     **MODELOS DE ENSAMBLE (RANDOM FOREST, EXTRA TREES, HISTGRADIENTBOOSTING)**
-o	Los tres alcanzaron un desempeño superior al 92% de accuracy, lo que indica que combinando múltiples clasificadores se logra capturar mejor la complejidad de los datos.
-o	Presentan un balance muy sólido entre precisión, recall y F1-score, mostrando que no solo aciertan mucho, sino que también logran identificar correctamente ambas clases (positiva y negativa).
-o	HistGradientBoosting también es competitivo, aunque ligeramente detrás en errores totales.
+- Los tres alcanzaron un desempeño superior al 92% de accuracy, lo que indica que combinando múltiples clasificadores se logra capturar mejor la complejidad de los datos.
+- Presentan un balance muy sólido entre precisión, recall y F1-score, mostrando que no solo aciertan mucho, sino que también logran identificar correctamente ambas clases (positiva y negativa).
+- HistGradientBoosting también es competitivo, aunque ligeramente detrás en errores totales.
+ 
  **Conclusión modelos de ensamble: los ensambles son más robustos porque reducen el riesgo de sobreajuste individual y logran una mejor generalización.**
 
 **MODELOS BASE (SVM LINEAL Y REGRESIÓN LOGÍSTICA)**
-o	Ambos alcanzaron un accuracy cercano al 78%, lo que representa una caída de  aproximadamente 15 puntos respecto a los ensambles.
-o	Aunque la precisión y el recall son aceptables (sobre todo el recall de la clase positiva, que llegó al 89% en regresión logística), el alto número de falsos positivos y falsos negativos reduce su utilidad práctica.
-o	Su ventaja está en la simplicidad y velocidad de entrenamiento, además de ser más interpretables, lo que los hace adecuados para escenarios donde la transparencia es más importante que la máxima precisión.
+- Ambos alcanzaron un accuracy cercano al 78%, lo que representa una caída de  aproximadamente 15 puntos respecto a los ensambles.
+- Aunque la precisión y el recall son aceptables (sobre todo el recall de la clase positiva, que llegó al 89% en regresión logística), el alto número de falsos positivos y falsos negativos reduce su utilidad práctica.
+- Su ventaja está en la simplicidad y velocidad de entrenamiento, además de ser más interpretables, lo que los hace adecuados para escenarios donde la transparencia es más importante que la máxima precisión.
+ 
  **Conclusión modelos base: los modelos base son útiles como punto de partida y para tener interpretabilidad, pero en este caso no son suficientes si se busca minimizar errores de clasificación.**
 
  **CONCLUSIÓN FINAL**
-•	Los modelos de ensamble superan ampliamente a los modelos base en todas las métricas críticas (accuracy, recall, F1-score y errores totales).
-•	Si el objetivo es maximizar el desempeño predictivo y reducir los errores, los ensambles (en particular Random Forest y Extra Trees) son la mejor opción.
-•	Los modelos base pueden mantenerse como referencia o en escenarios donde se priorice la interpretabilidad o rapidez, pero para aplicaciones prácticas exigentes, resultan limitados.
+- Los modelos de ensamble superan ampliamente a los modelos base en todas las métricas críticas (accuracy, recall, F1-score y errores totales).
+- Si el objetivo es maximizar el desempeño predictivo y reducir los errores, los ensambles (en particular Random Forest y Extra Trees) son la mejor opción.
+- Los modelos base pueden mantenerse como referencia o en escenarios donde se priorice la interpretabilidad o rapidez, pero para aplicaciones prácticas exigentes, resultan limitados.
      
     """)
 
