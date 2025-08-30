@@ -21,7 +21,7 @@ import joblib
 import os
 
 try:
-    st.set_page_config(page_title="Análisis de Fumadores 🚭", layout="wide")
+    st.set_page_config(page_title="Análisis de Fumadores ## 🚭", layout="wide")
     st.title("Modelo de clasificación de estado de consumo de Tabaco")
     st.subheader("Elaborado por: Daniela Forero Cardenas , David Mendez Medellin y María Alejandra Vanegas")
 
