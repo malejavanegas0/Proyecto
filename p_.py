@@ -25,19 +25,21 @@ try:
     st.title("Modelo de clasificación de estado de consumo de Tabaco")
     st.subheader("Elaborado por: Daniela Forero Cardenas , David Mendez Medellin y María Alejandra Vanegas")
 
-    st.markdown(
-    """
-    ## 📑 Índice
-    - [Composición Data Set](#composición-data-set)
-    - [Boxplots vs Smoking](#boxplots-por-variable-numérica-vs-smoking)
-    - [Variables Categóricas](#información-variables-categóricas)
-    - [Tratamiento de data](#tratamiento-de-data)
-    - [Exploración de PCA con características seleccionadas]
-    - [Modelos](#modelos)
-    - [Conclusiones](#conclusiones)
-    """,
-    unsafe_allow_html=True
-)
+    st.markdown("## 📑 Índice")
+    cols = st.columns(6)  # 6 botones horizontales
+    with cols[0]:
+        st.markdown("[Composición Data Set](#composición-data-set)")
+    with cols[1]:
+        st.markdown("[Boxplots vs Smoking](#boxplots-por-variable-numérica-vs-smoking)")
+    with cols[2]:
+        st.markdown("[Variables Categóricas](#información-variables-categóricas)")
+    with cols[3]:
+        st.markdown("[Tratamiento de data](#tratamiento-de-data)")
+    with cols[4]:
+        st.markdown("[Modelos](#modelos)")
+    with cols[5]:
+        st.markdown("[Conclusiones](#conclusiones)")
+
     st.subheader("Composición Data Set:")
     st.write("**Total registros:** 55,692")
     st.write("**Total variables:** 27")
