@@ -91,7 +91,7 @@ try:
     info_str = buffer.getvalue()
     st.text(info_str)
     st.write("Descripción estadística:", df.describe())
-    st.write("Valores nulos por columna:", df.isnull().sum())
+    #st.write("Valores nulos por columna:", df.isnull().sum())
 
     # Eliminamos columnas no necesarias
     df = df.drop(["ID", "oral"], axis=1)
