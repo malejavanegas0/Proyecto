@@ -22,6 +22,35 @@ import os
 
 try:
     st.set_page_config(page_title="Análisis de Fumadores 🚭", layout="wide")
+
+    st.markdown(
+    """
+    <style>
+    /* Fondo general */
+    body, .stApp {
+        background-color: #E6F0FA; /* Azul clarito */
+        color: #002147; /* Azul oscuro para el texto */
+    }
+
+    /* Personalizar títulos */
+    h1, h2, h3, h4, h5, h6 {
+        color: #002147; /* Azul oscuro */
+    }
+
+    /* Cambiar color de los links del índice */
+    a {
+        color: #003366 !important; 
+        font-weight: bold;
+    }
+    a:hover {
+        color: #001F54 !important; 
+        text-decoration: underline;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+    
     st.title("Modelo de clasificación de estado de consumo de Tabaco")
     st.subheader("Elaborado por: Daniela Forero Cardenas , David Mendez Medellin y María Alejandra Vanegas")
 
