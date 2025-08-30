@@ -22,7 +22,7 @@ import os
 
 try:
     st.set_page_config(page_title="Análisis de Fumadores 🚭", layout="wide")
-    st.title("PCA y Selección de Variables - Data Smoking")
+    st.title("Modelo de clasificación de estado de consumo de Tabaco - Data Smoking")
     st.subheader("Elaborado por: Daniela Forero Cardenas , David Mendez Medellin y María Alejandra Vanegas")
     st.subheader("Composición Data Set:")
     st.write("**Total registros:** 55,692")
